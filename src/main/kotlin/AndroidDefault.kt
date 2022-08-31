@@ -24,8 +24,8 @@ class AndroidDefault : Plugin<Project> {
                 }
 
                 compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_1_8
-                    targetCompatibility = JavaVersion.VERSION_1_8
+                    sourceCompatibility = JavaVersion.VERSION_11
+                    targetCompatibility = JavaVersion.VERSION_11
                 }
                 if(this is BaseAppModuleExtension) {
                     compileSdk = 32
@@ -42,7 +42,7 @@ class AndroidDefault : Plugin<Project> {
                 val kotlinOptions = (this as ExtensionAware).extensions.getByName("kotlinOptions")
                 if(kotlinOptions is KotlinJvmOptions) {
                     kotlinOptions.apply {
-                        jvmTarget = "1.8"
+                        jvmTarget = "11"
                     }
                 }
                 composeOptions {
